@@ -1,0 +1,1 @@
+avrdude -C /etc/avrdude.conf -p atmega328p -c arduino -P /dev/ttyUSB0 -D -U flash:w:$1.hex:i
