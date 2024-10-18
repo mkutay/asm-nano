@@ -26,6 +26,16 @@ main:
   ; reads from external pins of PORTC to r16
   in r16, PINC
 
+  cpi r16, 8
+  brlo lessthan
+
+  ldi r17, 2
+  add r16, r17
+
+  lessthan: 
+    ldi r17, 1
+    sub r16, r17
+
   out PORTB, r16 ; writes contents of r16 to PORTB
 
   mainloop : rjmp mainloop ; jump back to mainloop address
